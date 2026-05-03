@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bảo Hiền</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Nhạc nền -->
+    <audio id="birthdayMusic" src="music/nhac.mp4" loop></audio>
+
+    <!-- Layer hiệu ứng -->
+    <div class="flower-layer" id="flowerLayer"></div>
+    <div class="balloon-layer" id="balloonLayer"></div>
+    <div class="heart-layer" id="heartLayer"></div>
+
+    <!-- Intro Section - Hộp quà -->
+    <section class="intro-section" id="introSection">
+        <div class="intro-background">
+            <div class="intro-image-grid">
+                <img src="images/1.jpg" alt="" class="grid-img">
+                <img src="images/2.jpg" alt="" class="grid-img">
+                <img src="images/3.jpg" alt="" class="grid-img">
+                <img src="images/4.jpg" alt="" class="grid-img">
+                <img src="images/5.jpg" alt="" class="grid-img">
+                <img src="images/6.jpg" alt="" class="grid-img">
+            </div>
+        </div>
+        <div class="gift-container">
+            <div class="gift-box">
+                <div class="gift-lid">
+                    <div class="lid-shine"></div>
+                </div>
+                <div class="gift-body">
+                    <div class="body-shine"></div>
+                </div>
+                <div class="gift-ribbon-v"></div>
+                <div class="gift-ribbon-h"></div>
+                <div class="gift-bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+            </div>
+            <h1 class="gift-text">Đây là món quà tặng em</h1>
+            <button class="continue-btn" id="continueBtn">Mở quà 🎁</button>
+        </div>
+        <div class="sparkles" id="sparkles"></div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero hidden" id="hero">
+        <button class="back-btn" id="backToIntroBtn">← Quay lại</button>
+        
+        <div class="hero-left">
+            <div class="small-label">A little surprise for someone special</div>
+
+            <h1 class="hero-title">
+                <span class="title-happy">
+                    Happy
+                    <span class="party-hat">
+                        <span class="hat-heart">♡</span>
+                    </span>
+                    <span class="title-heart">♡</span>
+                </span>
+
+                <span class="title-birthday">Birthday</span>
+            </h1>
+
+            <div class="date-box">
+                <span>★</span>
+                <p>04 - 05</p>
+                <span>★</span>
+            </div>
+
+            <button class="open-btn" id="openLetterBtn">Mở thư</button>
+        </div>
+
+        <div class="hero-right">
+            <div class="circle-frame">
+                <img src="images/11.jpg" alt="Nguyễn Thị Bảo Hiền">
+            </div>
+
+            <div class="name-tag">
+                Nguyễn Thị Bảo Hiền
+            </div>
+        </div>
+    </section>
+
+    <!-- Lá thư -->
+    <section class="letter-section hidden" id="letterSection">
+        <button class="back-btn" id="backToHeroBtn">← Quay lại</button>
+        
+        <div class="letter-card">
+            <div class="letter-top">
+                <span>💌</span>
+                <h2>Gửi Pé Hiền</h2>
+            </div>
+
+            <p id="letterText"></p>
+
+            <button class="start-btn hidden" id="startBtn">Start ✨</button>
+        </div>
+    </section>
+
+    <!-- Kỷ niệm -->
+    <section class="memory-section hidden" id="memorySection">
+        <button class="back-btn" id="backToLetterBtn">← Quay lại</button>
+        
+        <h2>Một vài khoảnh khắc nhỏ xinh 🌷</h2>
+        <p class="memory-subtitle">
+            Có những người chỉ cần xuất hiện thôi, một ngày bình thường cũng trở nên dịu dàng hơn.
+        </p>
+
+        <div class="slider">
+            <button class="slide-btn prev" id="prevBtn">‹</button>
+
+            <div class="slide-card">
+                <img id="slideImage" src="images/1.jpg" alt="Memory">
+                <div class="slide-caption" id="slideCaption"></div>
+            </div>
+
+            <button class="slide-btn next" id="nextBtn">›</button>
+        </div>
+
+        <div class="dots" id="dots"></div>
+
+        <div class="final-message">
+            <h3>Happy Birthday, Pé Hiền 🎂</h3>
+            <p>
+                Chúc em tuổi mới luôn vui, luôn xinh, luôn được yêu thương
+                và luôn gặp những điều khiến trái tim mình mỉm cười.
+            </p>
+            <button class="gallery-btn" id="galleryBtn">Xem Tất Cả Kỷ Niệm ✨</button>
+        </div>
+    </section>
+
+    <!-- Gallery 3D Section -->
+    <section class="gallery-section hidden" id="gallerySection">
+        <button class="back-btn" id="backToMemoryBtn">← Quay lại</button>
+        
+        <div class="stars-background" id="starsBackground"></div>
+        
+        <div class="hold-button-container" id="holdButtonContainer">
+            <div class="hold-instruction">Nhấn giữ để xem kỷ niệm ✨</div>
+            <div class="hold-button" id="holdButton">
+                <div class="hold-icon">🎁</div>
+                <svg class="progress-ring" width="160" height="160">
+                    <circle class="progress-ring-circle" 
+                            stroke="#ffd93d" 
+                            stroke-width="8" 
+                            fill="transparent" 
+                            r="70" 
+                            cx="80" 
+                            cy="80"/>
+                </svg>
+            </div>
+            <div class="hold-text">Nhấn Giữ</div>
+        </div>
+
+        <div class="gallery-title hidden" id="galleryTitle">
+            <h2>Những Khoảnh Khắc Đáng Nhớ 💕</h2>
+            <p>Click vào ảnh để xem rõ hơn</p>
+        </div>
+
+        <div class="image-modal hidden" id="imageModal">
+            <div class="modal-close" id="modalClose">✕</div>
+            <img class="modal-image" id="modalImage" src="" alt="">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
